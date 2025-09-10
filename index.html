@@ -182,7 +182,7 @@ TW: 有一天，一位同事板著臉對我說：
     rather than trophy hunting
 </code></pre>
           </details>
-          <details open>
+          <details>
   <summary>Visualization</summary>
 
   <figure class="viz">
@@ -219,6 +219,14 @@ TW: 有一天，一位同事板著臉對我說：
   </div>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>
+  const all = document.querySelectorAll('#portfolio details');
+  all.forEach(d=>{
+    d.addEventListener('toggle', ()=>{
+      if (d.open) all.forEach(o=>{ if(o!==d) o.open=false; });
+    });
+  });
+</script>
+
 </body>
 </html>
