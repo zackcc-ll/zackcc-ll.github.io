@@ -158,10 +158,26 @@ TW: 有一天，一位同事板著臉對我說：
           <p>Multilingual review crawling, cleaning, topic/sentiment labeling to produce VOC insights for service improvement.</p>
           <details>
             <summary>Report Outline</summary>
-            <pre><code>- Scope: 5,000+ KR/CN/JP reviews from major platforms
-- Key Topics: combat balancing, localization quality, monetization perception, story completeness
-- Sentiment Trend: changes before/after updates (graph)
-- Actions: enrich FAQ, unify patch-note terminology, improve tutorial guidance</code></pre>
+            <pre><code>- Dataset & Period:
+  4,107 reviews total (KR 745 / CN 2,176 / JP 1,186)
+  2019-11-29 ~ 2023-05-26
+
+- Sources:
+  Ruriweb (KR), Gamersky (CN), famitsu / 4gamer / amazon / 5ch (JP),
+  plus YouTube & Bilibili
+
+- Methods:
+  Scraping with Listly; cleaning via Excel/Notepad++;
+  Text mining with Textom & KH Coder (N-gram/co-occurrence, TF-IDF)
+
+- Cross-locale highlights:
+  • KR: stronger focus on system readability & combat;
+    “Ending” tightly linked with the “Exploration” part; Switch/Vanillaware frequent
+  • CN: emphasis on narrative & clearing the game; character names appear frequently;
+    “Platinum”/trophies signal achievement orientation; core-setting terms discussed in depth
+  • JP: scenario/SF/mecha keywords prominent; “Clear” tied to enjoying the full story
+    rather than trophy hunting
+</code></pre>
           </details>
           <details open>
   <summary>Visualization</summary>
