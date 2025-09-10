@@ -217,16 +217,20 @@ TW: 有一天，一位同事板著臉對我說：
 
     <footer>© <span id="y"></span> CHENYANZHEN. Resume & Portfolio.</footer>
   </div>
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  <script>
-  const all = document.querySelectorAll('#portfolio details');
-  all.forEach(d=>{
-    d.addEventListener('toggle', ()=>{
-      if (d.open) all.forEach(o=>{ if(o!==d) o.open=false; });
-    });
-  });
-</script>
+<script>
+// 页脚年份
+document.getElementById('y').textContent = new Date().getFullYear();
 
+// 默认把 #portfolio 里任何带 open 的 <details> 收起
+document.querySelectorAll('#portfolio details[open]').forEach(d => d.removeAttribute('open'));
+
+// 手风琴：#portfolio 中同一时间只展开一个
+const all = document.querySelectorAll('#portfolio details');
+all.forEach(d => {
+  d.addEventListener('toggle', () => {
+    if (d.open) all.forEach(o => { if (o !== d) o.open = false; });
+  });
+});
+</script>
 </body>
 </html>
