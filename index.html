@@ -277,12 +277,18 @@ TW: 有一天，一位同事板著臉對我說：
       </div>
     </section>
 
-    <footer>© <span id="y"></span> CHENYANZHEN. Resume & Portfolio.</footer>
+    <footer>© <span id="y"></span> CHENYANZHEN · <span id="last-updated"></span></footer>
   </div>
 <script>
 // 页脚年份
 document.getElementById('y').textContent = new Date().getFullYear();
-
+// Last updated（根据页面最后修改时间）
+const lu = document.getElementById('last-updated');
+if (lu) {
+  const d = new Date(document.lastModified);
+  const pad = n => String(n).padStart(2, '0');
+  lu.textContent = `Last updated: ${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+}
 // 默认把 #portfolio 里任何带 open 的 <details> 收起
 document.querySelectorAll('#portfolio details[open]').forEach(d => d.removeAttribute('open'));
 
