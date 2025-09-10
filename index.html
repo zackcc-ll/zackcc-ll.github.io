@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>진언진 CHENYANZHEN | Resume</title>
-  <meta name="description" content="진언진 CHENYANZHEN — 한국어 이력서 웹사이트" />
+  <title>진언진 CHENYANZHEN | Resume & Portfolio</title>
+  <meta name="description" content="진언진 CHENYANZHEN — 한국어 이력서 · Portfolio" />
   <meta name="robots" content="index,follow" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧩</text></svg>">
   <style>
@@ -23,9 +23,17 @@
                   radial-gradient(800px 500px at 100% 0%, rgba(47,132,255,.10), transparent 50%),
                   linear-gradient(180deg, var(--bg), var(--bg2));
     }
-    .wrap{min-height:100%; display:grid; place-items:center; padding:40px 16px}
+    .wrap{min-height:100%; padding:40px 16px}
+    .nav{
+      max-width:1100px; margin:0 auto 16px; display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .brand{display:flex; gap:10px; align-items:center; font-weight:700}
+    .nav a{color:var(--text); text-decoration:none; opacity:.9}
+    .nav .links{display:flex; gap:14px; flex-wrap:wrap}
+    .nav .links a:hover{opacity:1; text-decoration:underline}
+    .hero{max-width:1100px; margin:0 auto 22px}
     .card{
-      width:min(900px, 92vw);
+      width:100%;
       background:linear-gradient(180deg, #131a23, #0f151d);
       border:1px solid var(--border);
       border-radius:20px;
@@ -43,27 +51,118 @@
       box-shadow:0 6px 16px rgba(77,178,255,.35);
       transition: transform .06s ease, box-shadow .2s ease;
     }
+    .btn.secondary{
+      background:#0f141b; color:#d9e6f5; border:1px solid var(--border);
+      box-shadow:none; font-weight:600;
+    }
     .btn:hover{transform: translateY(-1px); box-shadow:0 10px 22px rgba(77,178,255,.45)}
     .meta{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px}
     .chip{border:1px solid var(--border); color:#c3cfdd; background:#0e141b; padding:6px 10px; border-radius:999px; font-size:13px}
-    footer{margin-top:18px; color:#90a0b2; font-size:12px}
+    section{max-width:1100px; margin:28px auto}
+    .sec-title{font-size: clamp(18px, 2.6vw, 22px); margin:0 0 12px}
+    .grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:16px}
+    .item{border:1px solid var(--border); border-radius:16px; background:#0f151d; padding:16px}
+    .item h3{margin:0 0 8px; font-size:18px}
+    .item p{margin:6px 0; color:var(--muted)}
+    details{background:#0e141b; border:1px solid var(--border); border-radius:12px; padding:10px 12px; margin-top:10px}
+    details > summary{cursor:pointer; font-weight:600}
+    code, pre{background:#0b1218; border:1px solid #1e2a39; border-radius:10px; padding:10px; color:#cfe5ff; display:block; overflow:auto}
+    footer{max-width:1100px; margin:40px auto 10px; color:#90a0b2; font-size:12px; text-align:center}
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <main class="card" role="main">
-      <h1>진언진 CHENYANZHEN — Resume</h1>
-      <p class="subtitle">한국어 이력서 웹사이트</p>
-      <div class="btn-row">
-        <a class="btn" href="이력서_진언진.pdf" target="_blank" rel="noreferrer">⬇️ PDF 다운로드</a>
+    <!-- NAV -->
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">🧩 <a href="#top"><strong>CHENYANZHEN</strong></a></div>
+      <div class="links">
+        <a href="#resume">Resume</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
       </div>
-      <div class="meta">
-        <span class="chip">Seoul</span>
-        <span class="chip">KR · CN · EN · JP</span>
-        <span class="chip">Game Localization / CS</span>
+    </nav>
+
+    <!-- HERO / RESUME -->
+    <header id="top" class="hero">
+      <main id="resume" class="card" role="main">
+        <h1>진언진 CHENYANZHEN — Resume</h1>
+        <p class="subtitle">한국어 이력서 · Game Localization & CS</p>
+        <div class="btn-row">
+          <a class="btn" href="이력서_진언진.pdf" target="_blank" rel="noreferrer">⬇️ PDF 다운로드</a>
+          <a class="btn secondary" href="#portfolio">Go to Portfolio</a>
+        </div>
+        <div class="meta">
+          <span class="chip">Seoul</span>
+          <span class="chip">KR · CN · EN · JP</span>
+          <span class="chip">Game Localization / CS</span>
+        </div>
+      </main>
+    </header>
+
+    <!-- PORTFOLIO (English only, two sections) -->
+    <section id="portfolio" aria-labelledby="portfolio-title">
+      <h2 id="portfolio-title" class="sec-title">Portfolio</h2>
+      <div class="grid">
+        <!-- Translation Samples -->
+        <article class="item">
+          <h3>Translation Samples (KR ↔ CN)</h3>
+          <p>Selected examples covering UI/System strings and Character Dialogue. Focus on natural tone, consistency, and cultural nuance.</p>
+          <details>
+            <summary>UI · System</summary>
+            <pre><code>KR: 설정 &gt; 자동 저장  | CN: 设置 &gt; 自动存档
+KR: 재시도               | CN: 重试
+KR: 장비 강화            | CN: 装备强化
+KR: 접속 보상            | CN: 登录奖励
+KR: 한정 패키지          | CN: 限定礼包</code></pre>
+          </details>
+          <details>
+            <summary>Character Dialogue</summary>
+            <pre><code>KR: 오늘은 네가 이겼네. 다음엔 봐주지 않을 거야.
+CN: 今天算你赢。下次我可不会手下留情。
+
+KR: 이건 우리 길드의 명예가 걸린 문제야.
+CN: 这关乎我们公会的荣誉。
+
+KR: 부탁이야, 이번만은 물러서 줘.
+CN: 拜托，这一次就退一步吧。</code></pre>
+          </details>
+          <details>
+            <summary>Style Guide (Brief)</summary>
+            <p class="muted">Proper nouns, numeral/unit rules, honorifics, spacing/punctuation, blocked terms; glossary maintenance for consistency.</p>
+          </details>
+        </article>
+
+        <!-- Data Analysis -->
+        <article class="item">
+          <h3>Player Review Data Analysis</h3>
+          <p>Multilingual review crawling, cleaning, topic/sentiment labeling to produce VOC insights for service improvement.</p>
+          <details>
+            <summary>Report Outline</summary>
+            <pre><code>- Scope: 5,000+ KR/CN/JP reviews from major platforms
+- Key Topics: combat balancing, localization quality, monetization perception, story completeness
+- Sentiment Trend: changes before/after updates (graph)
+- Actions: enrich FAQ, unify patch-note terminology, improve tutorial guidance</code></pre>
+          </details>
+          <details>
+            <summary>Visualization Placeholder</summary>
+            <p class="muted">Upload PNGs to <code>/images</code> and insert with: &lt;img src="images/voc_sample.png" alt="VOC Visualization" /&gt;</p>
+          </details>
+        </article>
       </div>
-      <footer>© <span id="y"></span> CHENYANZHEN. All rights reserved.</footer>
-    </main>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="sec-title">Contact</h2>
+      <div class="card">
+        <p>📧 Email: <a href="mailto:zackcc06@naver.com">zackcc06@naver.com</a></p>
+        <p>🔗 GitHub: <a target="_blank" rel="noreferrer" href="https://github.com/zackcc-ll">github.com/zackcc-ll</a></p>
+        <p>🔗 LinkedIn: <em>Share your link if you'd like a button added.</em></p>
+      </div>
+    </section>
+
+    <footer>© <span id="y"></span> CHENYANZHEN. Resume & Portfolio.</footer>
   </div>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
